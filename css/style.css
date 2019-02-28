@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#button {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 50px solid greenyellow;
+    z-index: 3;
+    left: 50px;
+    top: 50px;
+    border-radius: 50%;
+    animation: switchOff 300ms linear infinite alternate;
+}
+
+#button:hover {
+    animation: none;
+}
+
+#button:hover + #dark {
+    background-color: transparent;
+}
+
+#dark {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 2;
+    transition: all 2s ease;
+}
+
+#image {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../img/sheep.png");
+    background-position: center;
+    background-size: cover; 
+    z-index: 1;
+}
+
+@keyframes switchOff {
+    from {
+        border: 0px solid greenyellow;
+        opacity: 0;
+    }
+
+    to {
+        border: 50px solid greenyellow;
+        opacity: 1;
+    }
+}
